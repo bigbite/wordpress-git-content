@@ -1,0 +1,90 @@
+/*--------------------------------------------------*\
+  Colours
+\*--------------------------------------------------*/
+
+$colour__code--base: white;
+$colour__code--background: #4a545b;
+$colour__code--kwd: #e9c865;
+$colour__code--com: #c3b8b7;
+$colour__code--typ: #ff9787;
+$colour__code--lit: #b5db99;
+$colour__code--fun: #ff0000;
+$colour__code--var: $colour__code--lit;
+$colour__code--dec: $colour__code--lit;
+$colour__code--pun: white;
+$colour__code--opn: white;
+$colour__code--clo: white;
+$colour__code--tag: $colour__code--kwd;
+$colour__code--atn: $colour__code--typ;
+$colour__code--atv: $colour__code--lit;
+$colour__code--str: $colour__code--lit;
+
+/*--------------------------------------------------*\
+  Markdown
+\*--------------------------------------------------*/
+p {
+  code {
+    background: #fcfcfc;
+    color: #000;
+    padding: 3px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+}
+
+blockquote {
+  background: #fcfcfc;
+  max-width: 100%;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  padding: 18px;
+  p, a {
+    color: #000;
+    margin: 0;
+  }
+}
+
+/*--------------------------------------------------*\
+  Pretty Print Override
+\*--------------------------------------------------*/
+
+pre.prettyprint {
+  display: block;
+  line-height: 1.2;
+  padding: 20px;
+  margin: 20px 0 20px 0;
+  background-color: $colour__code--background;
+  background-clip: padding-box;
+  white-space: pre;
+  border-radius: 5px;
+  border: none;
+  overflow: hidden;
+
+  code {
+    font-family:'Source Code Pro', Monaco,Consolas,"Lucida Console",monospace;
+    font-size: 11px;
+    .pln { color: $colour__code--base; }
+    .kwd { color: $colour__code--kwd; }
+    .com { color: $colour__code--com; }
+    .typ { color: $colour__code--typ; }
+    .lit { color: $colour__code--lit; }
+    .fun { color: $colour__code--fun; }
+    .var { color: $colour__code--var; }
+    .dec { color: $colour__code--dec; }
+    .pun { color: $colour__code--pun; }
+    .opn { color: $colour__code--opn; }
+    .clo { color: $colour__code--clo; }
+    .tag { color: $colour__code--tag; }
+    .atn { color: $colour__code--atn; }
+    .atv { color: $colour__code--atv; }
+    .str { color: $colour__code--str; }
+  }
+
+}
+
+
+
+
+
+
+

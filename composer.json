@@ -1,0 +1,19 @@
+{
+  "name": "bigbitecreative/wordpress-git-content",
+  "description": "WordPress Plugin",
+  "license": "MIT",
+  "require": {
+    "getherbert/framework": "~0.9",
+    "guzzlehttp/guzzle": "~6.0",
+    "erusev/parsedown": "~1.5"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "GitContent\\": "app/"
+    }
+  }
+}

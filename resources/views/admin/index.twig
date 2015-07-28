@@ -1,0 +1,48 @@
+{% set data = session_flashed('__form_data').0 %}
+{% set fd = (data) ? data : fd %}
+<div class="wrap">
+    <h2>Git Content</h2>
+
+    {% spaceless %}
+        <form id="poststuff" action="{{ panel_url('GitContent::settings') }}" method="post">
+            {# Settings #}
+            <div class="widefat postbox">
+                <h3 class="hndle"><span>Settings</span></h3>
+                <div class="inside">
+                    <table class="form-table">
+                        <tr>
+                            <th>
+                                <label for="token">Github Token: </label>
+                            </th>
+                            <td>
+                                <input name="token" type="text" value="{{ fd.token }}" class="large-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="repo">Repository: </label>
+                            </th>
+                            <td>
+                                <input name="repo" type="text" value="{{ fd.repo }}" class="large-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="branch">Branch: </label>
+                            </th>
+                            <td>
+                                <input name="branch" type="text" value="{{ fd.branch }}" class="large-text" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div>
+                <input class="button button-primary" type="submit" value="Save Settings">
+            </div>
+
+        </form>
+    {% endspaceless %}
+
+</div>

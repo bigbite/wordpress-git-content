@@ -18,3 +18,11 @@ Once set up go to a post, you will see a new addition to the publish box:
 To load a file, put the filename in this box - for example `my-post.md` then click Update. Anytime you need to refetch the file, in cases where you have made changes on the repo - just update the post.
 
 If you need to revert back to use the visual editor, just set this box to empty and click Update.
+
+## Styling
+
+The `includes` folder contains a SASS file to help you style the html outputted from the markdown - if you don't use SASS you can include the CSS in your theme. If you want code highlighting include the js file in your theme and on the body tag:
+
+``` html
+<body onload="addPrettyPrint()">
+```

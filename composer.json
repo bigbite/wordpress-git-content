@@ -5,7 +5,8 @@
   "require": {
     "getherbert/framework": "~0.9",
     "guzzlehttp/guzzle": "~6.0",
-    "erusev/parsedown": "~1.5"
+    "erusev/parsedown": "^1.6",
+    "erusev/parsedown-extra": "^0.7.1"
   },
   "config": {
     "preferred-install": "dist"

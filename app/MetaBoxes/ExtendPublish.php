@@ -6,6 +6,9 @@ use GitContent\Helper;
 use GitContent\Controllers\AdminController;
 use GitContent\Services\Github;
 use Herbert\Framework\Notifier;
+use Parsedown;
+use ParsedownExtra;
+
 /**
  * Class ExtendPublish.
  */
@@ -109,6 +112,7 @@ class ExtendPublish
 
         $inputs = get_option( (new AdminController)->optionName );
         $response = $github->checkFile($inputs, $file);
+        $markdownFile = Helper::storagePath($postID);
 
         if($response === false)
         {
@@ -116,11 +120,28 @@ class ExtendPublish
             return;
         }
 
-        if($github->downloadFile($inputs, $response, Helper::storagePath($postID)) === false)
+        if($github->downloadFile($inputs, $response, $markdownFile) === false)
         {
             Notifier::error('Git Content: Something went wrong, couldn\'t download file', true);
             return;
         }
+
+        /**
+        * Should really be using wp_insert_post_data filter
+        * but it fires to early, requires double update.
+        * Will update later. See app/filters.php
+        **/
+        remove_action('save_post', [$this, 'save']);
+
+        wp_update_post([
+            'ID' => $postID,
+            'post_content' => (new ParsedownExtra)->text(file_get_contents($markdownFile))
+        ], false);
+
+        add_action('save_post', [$this, 'save']);
+        /**
+        * End
+        **/
 
         Notifier::success('Git Content: Success using ' . $file, true);
         update_post_meta($postID, $this->metaKey, $file);

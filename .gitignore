@@ -59,7 +59,6 @@ wp-config-live.php
 !app/phpunit.xml
 
 #Composer
-/vendor
 composer.lock
 
 .idea/encodings.xml

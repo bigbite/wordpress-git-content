@@ -24,6 +24,13 @@ return [
     ],
 
     /**
+     * The routes to auto-load.
+     */
+    'routes' => [
+        'GitContent' => __DIR__ . '/app/routes.php'
+    ],
+
+    /**
      * The panels to auto-load.
      */
     'panels' => [

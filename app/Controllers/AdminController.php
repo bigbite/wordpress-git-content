@@ -12,7 +12,7 @@ use GitContent\Services\Github;
 class AdminController
 {
     public $optionName = 'gitcontent_settings';
-    protected $options = [ 'token', 'repo', 'branch' ];
+    protected $options = [ 'token', 'repo', 'branch', 'route' ];
 
     public function index()
     {

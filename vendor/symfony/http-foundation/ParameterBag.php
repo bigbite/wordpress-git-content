@@ -82,8 +82,6 @@ class ParameterBag implements \IteratorAggregate, \Countable
      * @param mixed  $default The default value if the parameter key does not exist
      *
      * @return mixed
-     *
-     * @throws \InvalidArgumentException
      */
     public function get($key, $default = null)
     {
@@ -192,10 +190,10 @@ class ParameterBag implements \IteratorAggregate, \Countable
     /**
      * Filter key.
      *
-     * @param string $key     Key.
-     * @param mixed  $default Default = null.
-     * @param int    $filter  FILTER_* constant.
-     * @param mixed  $options Filter options.
+     * @param string $key     Key
+     * @param mixed  $default Default = null
+     * @param int    $filter  FILTER_* constant
+     * @param mixed  $options Filter options
      *
      * @see http://php.net/manual/en/function.filter-var.php
      *

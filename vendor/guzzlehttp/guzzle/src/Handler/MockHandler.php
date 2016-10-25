@@ -1,6 +1,7 @@
 <?php
 namespace GuzzleHttp\Handler;
 
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Promise\RejectedPromise;
@@ -27,7 +28,7 @@ class MockHandler implements \Countable
      * @param callable $onFulfilled Callback to invoke when the return value is fulfilled.
      * @param callable $onRejected  Callback to invoke when the return value is rejected.
      *
-     * @return MockHandler
+     * @return HandlerStack
      */
     public static function createWithMiddleware(
         array $queue = null,
@@ -72,6 +73,18 @@ class MockHandler implements \Countable
         $this->lastRequest = $request;
         $this->lastOptions = $options;
         $response = array_shift($this->queue);
+
+        if (isset($options['on_headers'])) {
+            if (!is_callable($options['on_headers'])) {
+                throw new \InvalidArgumentException('on_headers must be callable');
+            }
+            try {
+                $options['on_headers']($response);
+            } catch (\Exception $e) {
+                $msg = 'An error was encountered during the on_headers event';
+                $response = new RequestException($msg, $request, $response, $e);
+            }
+        }
 
         if (is_callable($response)) {
             $response = call_user_func($response, $request, $options);

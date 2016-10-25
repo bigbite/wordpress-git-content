@@ -28,11 +28,15 @@ class ValueExporter
     public function exportValue($value, $depth = 1, $deep = false)
     {
         if (is_object($value)) {
-            if ($value instanceof \DateTime || $value instanceof \DateTimeInterface) {
+            if ($value instanceof \DateTimeInterface) {
                 return sprintf('Object(%s) - %s', get_class($value), $value->format(\DateTime::ISO8601));
             }
 
             return sprintf('Object(%s)', get_class($value));
+        }
+
+        if ($value instanceof \__PHP_Incomplete_Class) {
+            return sprintf('__PHP_Incomplete_Class(%s)', $this->getClassNameFromIncomplete($value));
         }
 
         if (is_array($value)) {
@@ -74,5 +78,12 @@ class ValueExporter
         }
 
         return (string) $value;
+    }
+
+    private function getClassNameFromIncomplete(\__PHP_Incomplete_Class $value)
+    {
+        $array = new \ArrayObject($value);
+
+        return $array['__PHP_Incomplete_Class_Name'];
     }
 }

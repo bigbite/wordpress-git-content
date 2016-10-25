@@ -8,18 +8,28 @@ use SplFileInfo;
 use RuntimeException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Support\Arrayable;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 class Request extends SymfonyRequest implements Arrayable, ArrayAccess
 {
+    use Macroable;
+
     /**
      * The decoded JSON content for the request.
      *
      * @var string
      */
     protected $json;
+
+    /**
+     * All of the converted files for the request.
+     *
+     * @var array
+     */
+    protected $convertedFiles;
 
     /**
      * The user resolver callback.
@@ -96,7 +106,22 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     {
         $query = $this->getQueryString();
 
-        return $query ? $this->url().'?'.$query : $this->url();
+        $question = $this->getBaseUrl().$this->getPathInfo() == '/' ? '/?' : '?';
+
+        return $query ? $this->url().$question.$query : $this->url();
+    }
+
+    /**
+     * Get the full URL for the request with the added query string parameters.
+     *
+     * @param  array  $query
+     * @return string
+     */
+    public function fullUrlWithQuery(array $query)
+    {
+        return count($this->query()) > 0
+                        ? $this->url().'/?'.http_build_query(array_merge($this->query(), $query))
+                        : $this->fullUrl().'?'.http_build_query($query);
     }
 
     /**
@@ -246,7 +271,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
         $input = $this->all();
 
         foreach ($keys as $value) {
-            if (! array_key_exists($value, $input)) {
+            if (! Arr::has($input, $value)) {
                 return false;
             }
         }
@@ -295,7 +320,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      */
     public function all()
     {
-        return array_replace_recursive($this->input(), $this->files->all());
+        return array_replace_recursive($this->input(), $this->allFiles());
     }
 
     /**
@@ -313,7 +338,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     }
 
     /**
-     * Get a subset of the items from the input data.
+     * Get a subset containing the provided keys with values from the input data.
      *
      * @param  array|mixed  $keys
      * @return array
@@ -348,6 +373,17 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
         Arr::forget($results, $keys);
 
         return $results;
+    }
+
+    /**
+     * Intersect an array of items with the input data.
+     *
+     * @param  array|mixed  $keys
+     * @return array
+     */
+    public function intersect($keys)
+    {
+        return array_filter($this->only(is_array($keys) ? $keys : func_get_args()));
     }
 
     /**
@@ -386,15 +422,48 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     }
 
     /**
+     * Get an array of all of the files on the request.
+     *
+     * @return array
+     */
+    public function allFiles()
+    {
+        $files = $this->files->all();
+
+        return $this->convertedFiles
+                    ? $this->convertedFiles
+                    : $this->convertedFiles = $this->convertUploadedFiles($files);
+    }
+
+    /**
+     * Convert the given array of Symfony UploadedFiles to custom Laravel UploadedFiles.
+     *
+     * @param  array  $files
+     * @return array
+     */
+    protected function convertUploadedFiles(array $files)
+    {
+        return array_map(function ($file) {
+            if (is_null($file) || (is_array($file) && empty(array_filter($file)))) {
+                return $file;
+            }
+
+            return is_array($file)
+                        ? $this->convertUploadedFiles($file)
+                        : UploadedFile::createFromBase($file);
+        }, $files);
+    }
+
+    /**
      * Retrieve a file from the request.
      *
      * @param  string  $key
      * @param  mixed  $default
-     * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array|null
+     * @return \Illuminate\Http\UploadedFile|array|null
      */
     public function file($key = null, $default = null)
     {
-        return data_get($this->files->all(), $key, $default);
+        return data_get($this->allFiles(), $key, $default);
     }
 
     /**
@@ -427,6 +496,17 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
     protected function isValidFile($file)
     {
         return $file instanceof SplFileInfo && $file->getPath() != '';
+    }
+
+    /**
+     * Determine if a header is set on the request.
+     *
+     * @param  string  $key
+     * @return bool
+     */
+    public function hasHeader($key)
+    {
+        return ! is_null($this->header($key));
     }
 
     /**
@@ -603,11 +683,7 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
 
         $split = explode('/', $actual);
 
-        if (isset($split[1]) && preg_match('/'.$split[0].'\/.+\+'.$split[1].'/', $type)) {
-            return true;
-        }
-
-        return false;
+        return isset($split[1]) && preg_match('#'.preg_quote($split[0], '#').'/.+\+'.preg_quote($split[1], '#').'#', $type);
     }
 
     /**

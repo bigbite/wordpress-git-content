@@ -1,23 +1,110 @@
 [
     {
+        "name": "erusev/parsedown",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/erusev/parsedown.git",
+            "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/erusev/parsedown/zipball/3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
+            "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
+            "shasum": ""
+        },
+        "time": "2015-10-04 16:44:32",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Parsedown": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "Parser for Markdown.",
+        "homepage": "http://parsedown.org",
+        "keywords": [
+            "markdown",
+            "parser"
+        ]
+    },
+    {
+        "name": "erusev/parsedown-extra",
+        "version": "0.7.1",
+        "version_normalized": "0.7.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/erusev/parsedown-extra.git",
+            "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
+            "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
+            "shasum": ""
+        },
+        "require": {
+            "erusev/parsedown": "~1.4"
+        },
+        "time": "2015-11-01 10:19:22",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ParsedownExtra": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "An extension of Parsedown that adds support for Markdown Extra.",
+        "homepage": "https://github.com/erusev/parsedown-extra",
+        "keywords": [
+            "markdown",
+            "markdown extra",
+            "parsedown",
+            "parser"
+        ]
+    },
+    {
         "name": "psr/log",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/php-fig/log.git",
-            "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e"
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/log/zipball/d8e60a5619fff77f9669da8997697443ef1a1d7e",
-            "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-01-06 21:40:42",
+        "time": "2016-10-10 12:19:37",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -55,12 +142,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/debug.git",
-            "reference": "34dc96f3f145a7b1f89ad30bf94eda22f5c7d611"
+            "reference": "61de4883414e3a640ffac1798d411a37dc71bc20"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/debug/zipball/34dc96f3f145a7b1f89ad30bf94eda22f5c7d611",
-            "reference": "34dc96f3f145a7b1f89ad30bf94eda22f5c7d611",
+            "url": "https://api.github.com/repos/symfony/debug/zipball/61de4883414e3a640ffac1798d411a37dc71bc20",
+            "reference": "61de4883414e3a640ffac1798d411a37dc71bc20",
             "shasum": ""
         },
         "require": {
@@ -74,11 +161,11 @@
             "symfony/class-loader": "~2.8|~3.0",
             "symfony/http-kernel": "~2.8|~3.0"
         },
-        "time": "2016-02-04 12:57:09",
+        "time": "2016-09-30 10:45:11",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.1-dev"
+                "dev-master": "3.2-dev"
             }
         },
         "installation-source": "dist",
@@ -108,31 +195,93 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "symfony/http-foundation",
+        "name": "symfony/polyfill-mbstring",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/http-foundation.git",
-            "reference": "6edfe4a63b1f5c0a3d0c6190998c9089784ea883"
+            "url": "https://github.com/symfony/polyfill-mbstring.git",
+            "reference": "53ad9faffe141fbe8f98cd6a7fd9a5e84513f56c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/6edfe4a63b1f5c0a3d0c6190998c9089784ea883",
-            "reference": "6edfe4a63b1f5c0a3d0c6190998c9089784ea883",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/53ad9faffe141fbe8f98cd6a7fd9a5e84513f56c",
+            "reference": "53ad9faffe141fbe8f98cd6a7fd9a5e84513f56c",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.5.9"
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-mbstring": "For best performance"
+        },
+        "time": "2016-08-30 17:06:17",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Mbstring\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for the Mbstring extension",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "mbstring",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "symfony/http-foundation",
+        "version": "3.0.x-dev",
+        "version_normalized": "3.0.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/http-foundation.git",
+            "reference": "49ba00f8ede742169cb6b70abe33243f4d673f82"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/49ba00f8ede742169cb6b70abe33243f4d673f82",
+            "reference": "49ba00f8ede742169cb6b70abe33243f4d673f82",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9",
+            "symfony/polyfill-mbstring": "~1.1"
         },
         "require-dev": {
             "symfony/expression-language": "~2.8|~3.0"
         },
-        "time": "2016-02-04 12:57:09",
+        "time": "2016-07-17 13:54:30",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.1-dev"
+                "dev-master": "3.0-dev"
             }
         },
         "installation-source": "dist",
@@ -168,12 +317,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
-            "reference": "9d7930726e060b0c45ae10022a4cb307e502500b"
+            "reference": "e8f47a327c2f0fd5aa04fa60af2b693006ed7283"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/9d7930726e060b0c45ae10022a4cb307e502500b",
-            "reference": "9d7930726e060b0c45ae10022a4cb307e502500b",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/e8f47a327c2f0fd5aa04fa60af2b693006ed7283",
+            "reference": "e8f47a327c2f0fd5aa04fa60af2b693006ed7283",
             "shasum": ""
         },
         "require": {
@@ -190,11 +339,11 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2016-02-04 12:57:09",
+        "time": "2016-10-13 06:29:04",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.1-dev"
+                "dev-master": "3.2-dev"
             }
         },
         "installation-source": "dist",
@@ -224,18 +373,68 @@
         "homepage": "https://symfony.com"
     },
     {
+        "name": "paragonie/random_compat",
+        "version": "v1.x-dev",
+        "version_normalized": "1.9999999.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/paragonie/random_compat.git",
+            "reference": "1115ffa06bad72d01735d91f51eb022db556e205"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/1115ffa06bad72d01735d91f51eb022db556e205",
+            "reference": "1115ffa06bad72d01735d91f51eb022db556e205",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*|5.*"
+        },
+        "suggest": {
+            "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+        },
+        "time": "2016-04-03 05:47:09",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/random.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Paragon Initiative Enterprises",
+                "email": "security@paragonie.com",
+                "homepage": "https://paragonie.com"
+            }
+        ],
+        "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+        "keywords": [
+            "csprng",
+            "pseudorandom",
+            "random"
+        ]
+    },
+    {
         "name": "doctrine/inflector",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/inflector.git",
-            "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
+            "reference": "803a2ed9fea02f9ca47cd45395089fe78769a392"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
-            "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
+            "url": "https://api.github.com/repos/doctrine/inflector/zipball/803a2ed9fea02f9ca47cd45395089fe78769a392",
+            "reference": "803a2ed9fea02f9ca47cd45395089fe78769a392",
             "shasum": ""
         },
         "require": {
@@ -244,7 +443,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.*"
         },
-        "time": "2015-11-06 14:35:42",
+        "time": "2016-05-12 17:23:41",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -293,79 +492,18 @@
         ]
     },
     {
-        "name": "symfony/polyfill-mbstring",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/polyfill-mbstring.git",
-            "reference": "1289d16209491b584839022f29257ad859b8532d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/1289d16209491b584839022f29257ad859b8532d",
-            "reference": "1289d16209491b584839022f29257ad859b8532d",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "suggest": {
-            "ext-mbstring": "For best performance"
-        },
-        "time": "2016-01-20 09:13:37",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Polyfill\\Mbstring\\": ""
-            },
-            "files": [
-                "bootstrap.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony polyfill for the Mbstring extension",
-        "homepage": "https://symfony.com",
-        "keywords": [
-            "compatibility",
-            "mbstring",
-            "polyfill",
-            "portable",
-            "shim"
-        ]
-    },
-    {
         "name": "symfony/translation",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/translation.git",
-            "reference": "74893d6cb2536d7ec0152a0cff48859e6c80aceb"
+            "reference": "7f401e7c2a499dfb6bbfac25c76f614e3ed4904b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/translation/zipball/74893d6cb2536d7ec0152a0cff48859e6c80aceb",
-            "reference": "74893d6cb2536d7ec0152a0cff48859e6c80aceb",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/7f401e7c2a499dfb6bbfac25c76f614e3ed4904b",
+            "reference": "7f401e7c2a499dfb6bbfac25c76f614e3ed4904b",
             "shasum": ""
         },
         "require": {
@@ -386,11 +524,11 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2016-02-04 12:57:09",
+        "time": "2016-10-18 04:30:21",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.1-dev"
+                "dev-master": "3.2-dev"
             }
         },
         "installation-source": "dist",
@@ -421,17 +559,17 @@
     },
     {
         "name": "nesbot/carbon",
-        "version": "1.21.0",
-        "version_normalized": "1.21.0.0",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/briannesbitt/Carbon.git",
-            "reference": "7b08ec6f75791e130012f206e3f7b0e76e18e3d7"
+            "reference": "7a026991092624a245d300685ce09ff5b4d110e0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7b08ec6f75791e130012f206e3f7b0e76e18e3d7",
-            "reference": "7b08ec6f75791e130012f206e3f7b0e76e18e3d7",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7a026991092624a245d300685ce09ff5b4d110e0",
+            "reference": "7a026991092624a245d300685ce09ff5b4d110e0",
             "shasum": ""
         },
         "require": {
@@ -439,10 +577,16 @@
             "symfony/translation": "~2.6|~3.0"
         },
         "require-dev": {
+            "friendsofphp/php-cs-fixer": "~1.11",
             "phpunit/phpunit": "~4.0|~5.0"
         },
-        "time": "2015-11-04 20:07:17",
+        "time": "2016-07-22 14:20:35",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.22-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
@@ -470,17 +614,17 @@
     },
     {
         "name": "symfony/http-kernel",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "3.0.x-dev",
+        "version_normalized": "3.0.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/http-kernel.git",
-            "reference": "e730c270c3a423f5ad2190c3aed8b333ed33dc93"
+            "reference": "03ac7bbc8fccbf002e0bea88dbe09262b29dc2a9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/http-kernel/zipball/e730c270c3a423f5ad2190c3aed8b333ed33dc93",
-            "reference": "e730c270c3a423f5ad2190c3aed8b333ed33dc93",
+            "url": "https://api.github.com/repos/symfony/http-kernel/zipball/03ac7bbc8fccbf002e0bea88dbe09262b29dc2a9",
+            "reference": "03ac7bbc8fccbf002e0bea88dbe09262b29dc2a9",
             "shasum": ""
         },
         "require": {
@@ -488,7 +632,7 @@
             "psr/log": "~1.0",
             "symfony/debug": "~2.8|~3.0",
             "symfony/event-dispatcher": "~2.8|~3.0",
-            "symfony/http-foundation": "~2.8|~3.0"
+            "symfony/http-foundation": "~2.8.8|~3.0.8|~3.1.2|~3.2"
         },
         "conflict": {
             "symfony/config": "<2.8"
@@ -519,11 +663,11 @@
             "symfony/finder": "",
             "symfony/var-dumper": ""
         },
-        "time": "2016-02-04 12:57:09",
+        "time": "2016-07-30 09:29:03",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.1-dev"
+                "dev-master": "3.0-dev"
             }
         },
         "installation-source": "dist",
@@ -554,27 +698,27 @@
     },
     {
         "name": "illuminate/contracts",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "5.2.x-dev",
+        "version_normalized": "5.2.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/contracts.git",
-            "reference": "1690782764872b6953e2db691fbee3067305da1a"
+            "reference": "22bde7b048a33c702d9737fc1446234fff9b1363"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/contracts/zipball/1690782764872b6953e2db691fbee3067305da1a",
-            "reference": "1690782764872b6953e2db691fbee3067305da1a",
+            "url": "https://api.github.com/repos/illuminate/contracts/zipball/22bde7b048a33c702d9737fc1446234fff9b1363",
+            "reference": "22bde7b048a33c702d9737fc1446234fff9b1363",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.6.4"
+            "php": ">=5.5.9"
         },
-        "time": "2016-01-10 17:54:16",
+        "time": "2016-08-08 11:46:08",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.3-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -590,7 +734,7 @@
         "authors": [
             {
                 "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
+                "email": "taylor@laravel.com"
             }
         ],
         "description": "The Illuminate Contracts package.",
@@ -598,37 +742,41 @@
     },
     {
         "name": "illuminate/support",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "5.2.x-dev",
+        "version_normalized": "5.2.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/support.git",
-            "reference": "818000dff3010002aa6397b7a5e4a5bb129a3878"
+            "reference": "510230ab62a7d85dc70203f4fdca6fb71a19e08a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/support/zipball/818000dff3010002aa6397b7a5e4a5bb129a3878",
-            "reference": "818000dff3010002aa6397b7a5e4a5bb129a3878",
+            "url": "https://api.github.com/repos/illuminate/support/zipball/510230ab62a7d85dc70203f4fdca6fb71a19e08a",
+            "reference": "510230ab62a7d85dc70203f4fdca6fb71a19e08a",
             "shasum": ""
         },
         "require": {
             "doctrine/inflector": "~1.0",
             "ext-mbstring": "*",
-            "illuminate/contracts": "5.3.*",
-            "php": ">=5.6.4"
+            "illuminate/contracts": "5.2.*",
+            "paragonie/random_compat": "~1.4",
+            "php": ">=5.5.9"
+        },
+        "replace": {
+            "tightenco/collect": "self.version"
         },
         "suggest": {
             "illuminate/filesystem": "Required to use the composer class (5.2.*).",
             "jeremeamia/superclosure": "Required to be able to serialize closures (~2.2).",
-            "paragonie/random_compat": "Provides a compatible interface like PHP7's random_bytes() in PHP 5 projects (~1.1).",
-            "symfony/process": "Required to use the composer class (3.1.*).",
-            "symfony/var-dumper": "Required to use the dd function (3.1.*)."
+            "symfony/polyfill-php56": "Required to use the hash_equals function on PHP 5.5 (~1.0).",
+            "symfony/process": "Required to use the composer class (2.8.*|3.0.*).",
+            "symfony/var-dumper": "Improves the dd function (2.8.*|3.0.*)."
         },
-        "time": "2016-02-02 08:20:22",
+        "time": "2016-08-05 14:49:58",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.3-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -647,7 +795,7 @@
         "authors": [
             {
                 "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
+                "email": "taylor@laravel.com"
             }
         ],
         "description": "The Illuminate Support package.",
@@ -655,27 +803,27 @@
     },
     {
         "name": "symfony/finder",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "3.0.x-dev",
+        "version_normalized": "3.0.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
-            "reference": "43a0bde21f9f390131917b6202eb02b3fea1f799"
+            "reference": "3eb4e64c6145ef8b92adefb618a74ebdde9e3fe9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/finder/zipball/43a0bde21f9f390131917b6202eb02b3fea1f799",
-            "reference": "43a0bde21f9f390131917b6202eb02b3fea1f799",
+            "url": "https://api.github.com/repos/symfony/finder/zipball/3eb4e64c6145ef8b92adefb618a74ebdde9e3fe9",
+            "reference": "3eb4e64c6145ef8b92adefb618a74ebdde9e3fe9",
             "shasum": ""
         },
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2016-02-04 12:57:09",
+        "time": "2016-06-29 05:40:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.1-dev"
+                "dev-master": "3.0-dev"
             }
         },
         "installation-source": "dist",
@@ -706,35 +854,35 @@
     },
     {
         "name": "illuminate/session",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "5.2.x-dev",
+        "version_normalized": "5.2.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/session.git",
-            "reference": "c8ea436309c5806965bb93581d0404f160ad30a5"
+            "reference": "259ae8eaee714b4633b3ee4e51e98648840a976c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/session/zipball/c8ea436309c5806965bb93581d0404f160ad30a5",
-            "reference": "c8ea436309c5806965bb93581d0404f160ad30a5",
+            "url": "https://api.github.com/repos/illuminate/session/zipball/259ae8eaee714b4633b3ee4e51e98648840a976c",
+            "reference": "259ae8eaee714b4633b3ee4e51e98648840a976c",
             "shasum": ""
         },
         "require": {
-            "illuminate/contracts": "5.3.*",
-            "illuminate/support": "5.3.*",
+            "illuminate/contracts": "5.2.*",
+            "illuminate/support": "5.2.*",
             "nesbot/carbon": "~1.20",
-            "php": ">=5.6.4",
-            "symfony/finder": "3.1.*",
-            "symfony/http-foundation": "3.1.*"
+            "php": ">=5.5.9",
+            "symfony/finder": "2.8.*|3.0.*",
+            "symfony/http-foundation": "2.8.*|3.0.*"
         },
         "suggest": {
-            "illuminate/console": "Required to use the session:table command (5.3.*)."
+            "illuminate/console": "Required to use the session:table command (5.2.*)."
         },
-        "time": "2016-01-29 22:24:44",
+        "time": "2016-08-01 13:49:14",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.3-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -750,7 +898,7 @@
         "authors": [
             {
                 "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
+                "email": "taylor@laravel.com"
             }
         ],
         "description": "The Illuminate Session package.",
@@ -758,31 +906,31 @@
     },
     {
         "name": "illuminate/http",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "5.2.x-dev",
+        "version_normalized": "5.2.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/http.git",
-            "reference": "31cbb88d123996f499b3e069273720ddea92ddfd"
+            "reference": "019d947e218f8dce421010a22d899d6f4b4ced45"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/http/zipball/31cbb88d123996f499b3e069273720ddea92ddfd",
-            "reference": "31cbb88d123996f499b3e069273720ddea92ddfd",
+            "url": "https://api.github.com/repos/illuminate/http/zipball/019d947e218f8dce421010a22d899d6f4b4ced45",
+            "reference": "019d947e218f8dce421010a22d899d6f4b4ced45",
             "shasum": ""
         },
         "require": {
-            "illuminate/session": "5.3.*",
-            "illuminate/support": "5.3.*",
-            "php": ">=5.6.4",
-            "symfony/http-foundation": "3.1.*",
-            "symfony/http-kernel": "3.1.*"
+            "illuminate/session": "5.2.*",
+            "illuminate/support": "5.2.*",
+            "php": ">=5.5.9",
+            "symfony/http-foundation": "2.8.*|3.0.*",
+            "symfony/http-kernel": "2.8.*|3.0.*"
         },
-        "time": "2016-02-03 14:19:37",
+        "time": "2016-08-10 17:33:08",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.3-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -798,7 +946,7 @@
         "authors": [
             {
                 "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
+                "email": "taylor@laravel.com"
             }
         ],
         "description": "The Illuminate Http package.",
@@ -811,12 +959,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/var-dumper.git",
-            "reference": "c6c8f6195ee77f4e89cafa94f2dc738314349b88"
+            "reference": "c4ff00bb0f6b4a240312214c551077c69fb65fb6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/c6c8f6195ee77f4e89cafa94f2dc738314349b88",
-            "reference": "c6c8f6195ee77f4e89cafa94f2dc738314349b88",
+            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/c4ff00bb0f6b4a240312214c551077c69fb65fb6",
+            "reference": "c4ff00bb0f6b4a240312214c551077c69fb65fb6",
             "shasum": ""
         },
         "require": {
@@ -829,11 +977,11 @@
         "suggest": {
             "ext-symfony_debug": ""
         },
-        "time": "2016-01-14 09:13:44",
+        "time": "2016-10-21 19:59:10",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.1-dev"
+                "dev-master": "3.2-dev"
             }
         },
         "installation-source": "dist",
@@ -925,28 +1073,28 @@
     },
     {
         "name": "illuminate/container",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "5.2.x-dev",
+        "version_normalized": "5.2.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/container.git",
-            "reference": "7e61b276e7b3bdd9de05569c21fd2d28c89a4e40"
+            "reference": "5139cebc8293b6820b91aef6f4b4e18bde33c9b2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/container/zipball/7e61b276e7b3bdd9de05569c21fd2d28c89a4e40",
-            "reference": "7e61b276e7b3bdd9de05569c21fd2d28c89a4e40",
+            "url": "https://api.github.com/repos/illuminate/container/zipball/5139cebc8293b6820b91aef6f4b4e18bde33c9b2",
+            "reference": "5139cebc8293b6820b91aef6f4b4e18bde33c9b2",
             "shasum": ""
         },
         "require": {
-            "illuminate/contracts": "5.3.*",
-            "php": ">=5.6.4"
+            "illuminate/contracts": "5.2.*",
+            "php": ">=5.5.9"
         },
-        "time": "2016-01-22 18:35:51",
+        "time": "2016-08-01 13:49:14",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.3-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -962,7 +1110,7 @@
         "authors": [
             {
                 "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
+                "email": "taylor@laravel.com"
             }
         ],
         "description": "The Illuminate Container package.",
@@ -970,39 +1118,39 @@
     },
     {
         "name": "illuminate/database",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "5.2.x-dev",
+        "version_normalized": "5.2.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/database.git",
-            "reference": "a5403f31dfacce7fd6e12bc98d7ba25449f6b4eb"
+            "reference": "a0bb57a2b7140b26d149d127aae2bc66ca4e9a8d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/database/zipball/a5403f31dfacce7fd6e12bc98d7ba25449f6b4eb",
-            "reference": "a5403f31dfacce7fd6e12bc98d7ba25449f6b4eb",
+            "url": "https://api.github.com/repos/illuminate/database/zipball/a0bb57a2b7140b26d149d127aae2bc66ca4e9a8d",
+            "reference": "a0bb57a2b7140b26d149d127aae2bc66ca4e9a8d",
             "shasum": ""
         },
         "require": {
-            "illuminate/container": "5.3.*",
-            "illuminate/contracts": "5.3.*",
-            "illuminate/support": "5.3.*",
+            "illuminate/container": "5.2.*",
+            "illuminate/contracts": "5.2.*",
+            "illuminate/support": "5.2.*",
             "nesbot/carbon": "~1.20",
-            "php": ">=5.6.4"
+            "php": ">=5.5.9"
         },
         "suggest": {
             "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
             "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-            "illuminate/console": "Required to use the database commands (5.3.*).",
-            "illuminate/events": "Required to use the observers with Eloquent (5.3.*).",
-            "illuminate/filesystem": "Required to use the migrations (5.3.*).",
-            "illuminate/pagination": "Required to paginate the result set (5.3.*)."
+            "illuminate/console": "Required to use the database commands (5.2.*).",
+            "illuminate/events": "Required to use the observers with Eloquent (5.2.*).",
+            "illuminate/filesystem": "Required to use the migrations (5.2.*).",
+            "illuminate/pagination": "Required to paginate the result set (5.2.*)."
         },
-        "time": "2016-02-03 14:19:37",
+        "time": "2016-09-28 15:22:37",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.3-dev"
+                "dev-master": "5.2-dev"
             }
         },
         "installation-source": "dist",
@@ -1018,7 +1166,7 @@
         "authors": [
             {
                 "name": "Taylor Otwell",
-                "email": "taylorotwell@gmail.com"
+                "email": "taylor@laravel.com"
             }
         ],
         "description": "The Illuminate Database package.",
@@ -1037,12 +1185,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/twigphp/Twig.git",
-            "reference": "f0a4fa678465491947554f6687c5fca5e482f8ec"
+            "reference": "2555dd009cfb03581295d0afa13497b2cb8526a0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/f0a4fa678465491947554f6687c5fca5e482f8ec",
-            "reference": "f0a4fa678465491947554f6687c5fca5e482f8ec",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/2555dd009cfb03581295d0afa13497b2cb8526a0",
+            "reference": "2555dd009cfb03581295d0afa13497b2cb8526a0",
             "shasum": ""
         },
         "require": {
@@ -1052,11 +1200,11 @@
             "symfony/debug": "~2.7",
             "symfony/phpunit-bridge": "~2.7"
         },
-        "time": "2016-01-29 10:45:45",
+        "time": "2016-10-24 23:48:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.24-dev"
+                "dev-master": "1.27-dev"
             }
         },
         "installation-source": "dist",
@@ -1130,129 +1278,18 @@
         "description": "Herbert"
     },
     {
-        "name": "psr/http-message",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/php-fig/http-message.git",
-            "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
-            "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2015-05-04 20:22:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Psr\\Http\\Message\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "PHP-FIG",
-                "homepage": "http://www.php-fig.org/"
-            }
-        ],
-        "description": "Common interface for HTTP messages",
-        "keywords": [
-            "http",
-            "http-message",
-            "psr",
-            "psr-7",
-            "request",
-            "response"
-        ]
-    },
-    {
-        "name": "guzzlehttp/psr7",
-        "version": "1.2.2",
-        "version_normalized": "1.2.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/guzzle/psr7.git",
-            "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5d04bdd2881ac89abde1fb78cc234bce24327bb",
-            "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0",
-            "psr/http-message": "~1.0"
-        },
-        "provide": {
-            "psr/http-message-implementation": "1.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2016-01-23 01:23:02",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "GuzzleHttp\\Psr7\\": "src/"
-            },
-            "files": [
-                "src/functions_include.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Michael Dowling",
-                "email": "mtdowling@gmail.com",
-                "homepage": "https://github.com/mtdowling"
-            }
-        ],
-        "description": "PSR-7 message implementation",
-        "keywords": [
-            "http",
-            "message",
-            "stream",
-            "uri"
-        ]
-    },
-    {
         "name": "guzzlehttp/promises",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/promises.git",
-            "reference": "581943b46d0736605e4ef4676e9a820bbfff7388"
+            "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/promises/zipball/581943b46d0736605e4ef4676e9a820bbfff7388",
-            "reference": "581943b46d0736605e4ef4676e9a820bbfff7388",
+            "url": "https://api.github.com/repos/guzzle/promises/zipball/c10d860e2a9595f8883527fa0021c7da9e65f579",
+            "reference": "c10d860e2a9595f8883527fa0021c7da9e65f579",
             "shasum": ""
         },
         "require": {
@@ -1261,7 +1298,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2016-01-30 02:04:34",
+        "time": "2016-05-18 16:56:05",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1294,31 +1331,150 @@
         ]
     },
     {
+        "name": "psr/http-message",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-message.git",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-06 14:39:51",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP messages",
+        "homepage": "https://github.com/php-fig/http-message",
+        "keywords": [
+            "http",
+            "http-message",
+            "psr",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "guzzlehttp/psr7",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/psr7.git",
+            "reference": "64862e854f876bc5aee2996cab2f552db8586065"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/psr7/zipball/64862e854f876bc5aee2996cab2f552db8586065",
+            "reference": "64862e854f876bc5aee2996cab2f552db8586065",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "psr/http-message": "~1.0"
+        },
+        "provide": {
+            "psr/http-message-implementation": "1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2016-08-03 09:33:34",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Psr7\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            },
+            {
+                "name": "Tobias Schultze",
+                "homepage": "https://github.com/Tobion"
+            }
+        ],
+        "description": "PSR-7 message implementation that also provides common utility methods",
+        "keywords": [
+            "http",
+            "message",
+            "request",
+            "response",
+            "stream",
+            "uri",
+            "url"
+        ]
+    },
+    {
         "name": "guzzlehttp/guzzle",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/guzzle.git",
-            "reference": "8c033e192fdcddb3067ca77e0b6829e910ecdd7d"
+            "reference": "0c15c11264d1feed731976b596dd74d1129a7cc6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8c033e192fdcddb3067ca77e0b6829e910ecdd7d",
-            "reference": "8c033e192fdcddb3067ca77e0b6829e910ecdd7d",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0c15c11264d1feed731976b596dd74d1129a7cc6",
+            "reference": "0c15c11264d1feed731976b596dd74d1129a7cc6",
             "shasum": ""
         },
         "require": {
-            "guzzlehttp/promises": "~1.0",
-            "guzzlehttp/psr7": "~1.1",
-            "php": ">=5.5.0"
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.3.1",
+            "php": ">=5.5"
         },
         "require-dev": {
             "ext-curl": "*",
-            "phpunit/phpunit": "~4.0",
-            "psr/log": "~1.0"
+            "phpunit/phpunit": "^4.0",
+            "psr/log": "^1.0"
         },
-        "time": "2016-01-31 00:19:49",
+        "time": "2016-10-24 08:47:23",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1355,93 +1511,6 @@
             "http client",
             "rest",
             "web service"
-        ]
-    },
-    {
-        "name": "erusev/parsedown",
-        "version": "1.6.0",
-        "version_normalized": "1.6.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/erusev/parsedown.git",
-            "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/erusev/parsedown/zipball/3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
-            "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
-            "shasum": ""
-        },
-        "time": "2015-10-04 16:44:32",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Parsedown": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Emanuil Rusev",
-                "email": "hello@erusev.com",
-                "homepage": "http://erusev.com"
-            }
-        ],
-        "description": "Parser for Markdown.",
-        "homepage": "http://parsedown.org",
-        "keywords": [
-            "markdown",
-            "parser"
-        ]
-    },
-    {
-        "name": "erusev/parsedown-extra",
-        "version": "0.7.1",
-        "version_normalized": "0.7.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/erusev/parsedown-extra.git",
-            "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
-            "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
-            "shasum": ""
-        },
-        "require": {
-            "erusev/parsedown": "~1.4"
-        },
-        "time": "2015-11-01 10:19:22",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "ParsedownExtra": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Emanuil Rusev",
-                "email": "hello@erusev.com",
-                "homepage": "http://erusev.com"
-            }
-        ],
-        "description": "An extension of Parsedown that adds support for Markdown Extra.",
-        "homepage": "https://github.com/erusev/parsedown-extra",
-        "keywords": [
-            "markdown",
-            "markdown extra",
-            "parsedown",
-            "parser"
         ]
     }
 ]

@@ -11,6 +11,8 @@
 
 namespace Symfony\Component\VarDumper\Caster;
 
+use Symfony\Component\VarDumper\Cloner\Stub;
+
 /**
  * Helper for filtering out properties in casters.
  *
@@ -36,23 +38,28 @@ class Caster
     /**
      * Casts objects to arrays and adds the dynamic property prefix.
      *
-     * @param object           $obj       The object to cast.
-     * @param \ReflectionClass $reflector The class reflector to use for inspecting the object definition.
+     * @param object           $obj       The object to cast
+     * @param \ReflectionClass $reflector The class reflector to use for inspecting the object definition
      *
-     * @return array The array-cast of the object, with prefixed dynamic properties.
+     * @return array The array-cast of the object, with prefixed dynamic properties
      */
     public static function castObject($obj, \ReflectionClass $reflector)
     {
         if ($reflector->hasMethod('__debugInfo')) {
             $a = $obj->__debugInfo();
+        } elseif ($obj instanceof \Closure) {
+            $a = array();
         } else {
             $a = (array) $obj;
+        }
+        if ($obj instanceof \__PHP_Incomplete_Class) {
+            return $a;
         }
 
         if ($a) {
             $p = array_keys($a);
             foreach ($p as $i => $k) {
-                if (!isset($k[0]) || ("\0" !== $k[0] && !$reflector->hasProperty($k))) {
+                if (isset($k[0]) && "\0" !== $k[0] && !$reflector->hasProperty($k)) {
                     $p[$i] = self::PREFIX_DYNAMIC.$k;
                 } elseif (isset($k[16]) && "\0" === $k[16] && 0 === strpos($k, "\0class@anonymous\0")) {
                     $p[$i] = "\0".$reflector->getParentClass().'@anonymous'.strrchr($k, "\0");
@@ -70,14 +77,17 @@ class Caster
      * By default, a single match in the $filter bit field filters properties out, following an "or" logic.
      * When EXCLUDE_STRICT is set, an "and" logic is applied: all bits must match for a property to be removed.
      *
-     * @param array    $a                The array containing the properties to filter.
-     * @param int      $filter           A bit field of Caster::EXCLUDE_* constants specifying which properties to filter out.
-     * @param string[] $listedProperties List of properties to exclude when Caster::EXCLUDE_VERBOSE is set, and to preserve when Caster::EXCLUDE_NOT_IMPORTANT is set.
+     * @param array    $a                The array containing the properties to filter
+     * @param int      $filter           A bit field of Caster::EXCLUDE_* constants specifying which properties to filter out
+     * @param string[] $listedProperties List of properties to exclude when Caster::EXCLUDE_VERBOSE is set, and to preserve when Caster::EXCLUDE_NOT_IMPORTANT is set
+     * @param int      &$count           Set to the number of removed properties
      *
      * @return array The filtered array
      */
-    public static function filter(array $a, $filter, array $listedProperties = array())
+    public static function filter(array $a, $filter, array $listedProperties = array(), &$count = 0)
     {
+        $count = 0;
+
         foreach ($a as $k => $v) {
             $type = self::EXCLUDE_STRICT & $filter;
 
@@ -108,8 +118,17 @@ class Caster
 
             if ((self::EXCLUDE_STRICT & $filter) ? $type === $filter : $type) {
                 unset($a[$k]);
+                ++$count;
             }
         }
+
+        return $a;
+    }
+
+    public static function castPhpIncompleteClass(\__PHP_Incomplete_Class $c, array $a, Stub $stub, $isNested)
+    {
+        $stub->class .= '('.$a['__PHP_Incomplete_Class_Name'].')';
+        unset($a['__PHP_Incomplete_Class_Name']);
 
         return $a;
     }
